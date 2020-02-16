@@ -1,0 +1,8 @@
+{
+    "AudioToolbox.framework": 2,
+    "CoreLocation.framework": 2,
+    "WebKit.framework": 1,
+    "MapKit.framework": 1,
+    "SystemConfiguration.framework": 1,
+    "AVFoundation.framework": 1
+}
