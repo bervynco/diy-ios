@@ -73,11 +73,11 @@
               "count": 1
             },
             {
-              "xml": "<feature name=\"LaunchNavigator\"><param name=\"ios-package\" value=\"LaunchNavigatorPlugin\" /></feature>",
+              "xml": "<feature name=\"BarcodeScanner\"><param name=\"ios-package\" value=\"CDVBarcodeScanner\" /></feature>",
               "count": 1
             },
             {
-              "xml": "<feature name=\"BarcodeScanner\"><param name=\"ios-package\" value=\"CDVBarcodeScanner\" /></feature>",
+              "xml": "<feature name=\"LaunchNavigator\"><param name=\"ios-package\" value=\"LaunchNavigatorPlugin\" /></feature>",
               "count": 1
             }
           ]
@@ -94,6 +94,30 @@
           "NSLocationWhenInUseUsageDescription": [
             {
               "xml": "<string>This app requires access to your location for navigation purposes</string>",
+              "count": 1
+            }
+          ],
+          "NSCameraUsageDescription": [
+            {
+              "xml": "<string>your usage message</string>",
+              "count": 1
+            }
+          ],
+          "NSMicrophoneUsageDescription": [
+            {
+              "xml": "<string>your microphone usage message here</string>",
+              "count": 1
+            }
+          ],
+          "NSPhotoLibraryAddUsageDescription": [
+            {
+              "xml": "<string>your photo library usage message here</string>",
+              "count": 1
+            }
+          ],
+          "NSPhotoLibraryUsageDescription": [
+            {
+              "xml": "<string>your photo library usage message here</string>",
               "count": 1
             }
           ]
@@ -138,11 +162,18 @@
     "cordova-sqlite-storage": {
       "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
     "uk.co.workingedge.phonegap.plugin.launchnavigator": {
       "LOCATION_USAGE_DESCRIPTION": "This app requires access to your location for navigation purposes",
       "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
-    "phonegap-plugin-barcodescanner": {
+    "cordova-plugin-ios-camera-permissions": {
+      "CAMERA_USAGE_DESCRIPTION": "your usage message",
+      "MICROPHONE_USAGE_DESCRIPTION": "your microphone usage message here",
+      "PHOTOLIBRARY_ADD_USAGE_DESCRIPTION": "your photo library usage message here",
+      "PHOTOLIBRARY_USAGE_DESCRIPTION": "your photo library usage message here",
       "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     }
   },
@@ -279,6 +310,14 @@
       ]
     },
     {
+      "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
+      "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
+      "pluginId": "phonegap-plugin-barcodescanner",
+      "clobbers": [
+        "cordova.plugins.barcodeScanner"
+      ]
+    },
+    {
       "id": "uk.co.workingedge.phonegap.plugin.launchnavigator.Common",
       "file": "plugins/uk.co.workingedge.phonegap.plugin.launchnavigator/www/common.js",
       "pluginId": "uk.co.workingedge.phonegap.plugin.launchnavigator",
@@ -301,14 +340,6 @@
       "merges": [
         "launchnavigator"
       ]
-    },
-    {
-      "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-      "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-      "pluginId": "phonegap-plugin-barcodescanner",
-      "clobbers": [
-        "cordova.plugins.barcodeScanner"
-      ]
     }
   ],
   "plugin_metadata": {
@@ -324,7 +355,8 @@
     "cordova-plugin-statusbar": "2.4.2",
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-sqlite-storage": "3.4.0",
+    "phonegap-plugin-barcodescanner": "8.1.0",
     "uk.co.workingedge.phonegap.plugin.launchnavigator": "5.0.4",
-    "phonegap-plugin-barcodescanner": "8.1.0"
+    "cordova-plugin-ios-camera-permissions": "1.2.0"
   }
 }

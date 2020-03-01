@@ -55,11 +55,11 @@
     <feature name="SQLitePlugin">
         <param name="ios-package" value="SQLitePlugin" />
     </feature>
-    <feature name="LaunchNavigator">
-        <param name="ios-package" value="LaunchNavigatorPlugin" />
-    </feature>
     <feature name="BarcodeScanner">
         <param name="ios-package" value="CDVBarcodeScanner" />
+    </feature>
+    <feature name="LaunchNavigator">
+        <param name="ios-package" value="LaunchNavigatorPlugin" />
     </feature>
     <name>DIY Hardware</name>
     <description>DIY Hardware Mobile Application.</description>

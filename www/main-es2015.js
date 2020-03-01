@@ -573,7 +573,7 @@ module.exports = "<ion-header translucent>\n\t<ion-toolbar color=\"primary\"  mo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header translucent>\n\t<ion-toolbar color=\"primary\">\n\t\t<ion-buttons slot=\"start\">\n\t\t\t<ion-button [routerLink]=\"['/me']\">\n\t\t\t\t<ion-icon slot=\"icon-only\" name=\"arrow-back\"></ion-icon>\n\t\t\t</ion-button>\n\t\t</ion-buttons>\n\t\t<ion-title>Scan</ion-title>\n\t</ion-toolbar>\n</ion-header>\n<ion-content>\n\t<ion-button expand='block' margin (click)=\"goToBarcodeScan()\">Click to scan a barcode</ion-button>\n  \n</ion-content>"
+module.exports = "<ion-header translucent>\n\t<ion-toolbar color=\"primary\">\n\t\t<ion-buttons slot=\"start\">\n\t\t\t<ion-button [routerLink]=\"['/me']\">\n\t\t\t\t<ion-icon slot=\"icon-only\" name=\"arrow-back\"></ion-icon>\n\t\t\t</ion-button>\n\t\t</ion-buttons>\n\t\t<ion-title>Scan</ion-title>\n\t</ion-toolbar>\n</ion-header>\n<ion-content>\n\t<div id=\"scan-container\">\n\t\t<div id=\"scan-header\">\n\t\t\t<div id=\"scan-details\">\n\t\t\t\t<div id=\"scan-earned\"> {{points}} </div>\n\t\t\t\t<div id=\"scan-subtitle\">points earned</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div id=\"scan-body\">\n\t\t\t<ion-button expand='block' margin (click)=\"goToBarcodeScan()\">Click to scan a barcode</ion-button>\n\t\t</div>\n\t</div>\n\t\n</ion-content>"
 
 /***/ }),
 
@@ -1673,7 +1673,7 @@ let DataService = class DataService {
         this.token = "";
         this.DEV_BASE_PATH = 'http://localhost:10010/api/v1/';
         this.PROD_BASE_PATH = 'https://diy-platform-backend.herokuapp.com/api/v1/';
-        this.BASE_PATH = this.DEV_BASE_PATH;
+        this.BASE_PATH = this.PROD_BASE_PATH;
         // this.authService.getStorage("auth").then(function(token){
         // 	this.token=token;
         // })
@@ -2799,7 +2799,7 @@ ResetPasswordComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#close-scanner-button {\n    display: none;\n}\n\n.transparent-body {\n    background: none transparent !important;\n    opacity: 0 !important;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2Nhbi9zY2FuLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0FBQ2pCOztBQUVBO0lBQ0ksdUNBQXVDO0lBQ3ZDLHFCQUFxQjtFQUN2QiIsImZpbGUiOiJzcmMvYXBwL3NjYW4vc2Nhbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2Nsb3NlLXNjYW5uZXItYnV0dG9uIHtcbiAgICBkaXNwbGF5OiBub25lO1xufVxuXG4udHJhbnNwYXJlbnQtYm9keSB7XG4gICAgYmFja2dyb3VuZDogbm9uZSB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xuICAgIG9wYWNpdHk6IDAgIWltcG9ydGFudDtcbiAgfSJdfQ== */"
+module.exports = "#close-scanner-button {\n    display: none;\n}\n\n.transparent-body {\n    background: none transparent !important;\n    opacity: 0 !important;\n}\n\n#scan-container {\n    height: calc(100% - 5px);\n    width: 100%;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient:vertical;\n    -webkit-box-direction:normal;\n            flex-direction:column;\n}\n\n#scan-container > #scan-header {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-flex: 0;\n            flex: 0 0 200px;\n    -webkit-box-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n            align-items: center;\n}\n\n#scan-header > #scan-details {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-flex: 0;\n            flex: 0 0 100px;\n    -webkit-box-orient:vertical;\n    -webkit-box-direction:normal;\n            flex-direction:column;\n    width: 100%;\n    \n}\n\n#scan-details > #scan-earned {\n    font-size: 56px;\n    font-weight: bolder;\n    color:#EB4E29;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-pack: center;\n            justify-content: center;\n    align-content: center;\n}\n\n#scan-details > #scan-subtitle {\n    font-size: 12px;\n    font-weight: light;\n    color: #71737D;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-pack: center;\n            justify-content: center;\n    align-content: center;\n\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2Nhbi9zY2FuLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0FBQ2pCOztBQUVBO0lBQ0ksdUNBQXVDO0lBQ3ZDLHFCQUFxQjtBQUN6Qjs7QUFFQTtJQUNJLHdCQUF3QjtJQUN4QixXQUFXO0lBQ1gsb0JBQWE7SUFBYixhQUFhO0lBQ2IsMkJBQXFCO0lBQXJCLDRCQUFxQjtZQUFyQixxQkFBcUI7QUFDekI7O0FBRUE7SUFDSSxvQkFBYTtJQUFiLGFBQWE7SUFDYixtQkFBZTtZQUFmLGVBQWU7SUFDZix3QkFBdUI7WUFBdkIsdUJBQXVCO0lBQ3ZCLHlCQUFtQjtZQUFuQixtQkFBbUI7QUFDdkI7O0FBQ0E7SUFDSSxvQkFBYTtJQUFiLGFBQWE7SUFDYixtQkFBZTtZQUFmLGVBQWU7SUFDZiwyQkFBcUI7SUFBckIsNEJBQXFCO1lBQXJCLHFCQUFxQjtJQUNyQixXQUFXOztBQUVmOztBQUVBO0lBQ0ksZUFBZTtJQUNmLG1CQUFtQjtJQUNuQixhQUFhO0lBQ2Isb0JBQWE7SUFBYixhQUFhO0lBQ2Isd0JBQXVCO1lBQXZCLHVCQUF1QjtJQUN2QixxQkFBcUI7QUFDekI7O0FBRUE7SUFDSSxlQUFlO0lBQ2Ysa0JBQWtCO0lBQ2xCLGNBQWM7SUFDZCxvQkFBYTtJQUFiLGFBQWE7SUFDYix3QkFBdUI7WUFBdkIsdUJBQXVCO0lBQ3ZCLHFCQUFxQjs7QUFFekIiLCJmaWxlIjoic3JjL2FwcC9zY2FuL3NjYW4uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNjbG9zZS1zY2FubmVyLWJ1dHRvbiB7XG4gICAgZGlzcGxheTogbm9uZTtcbn1cblxuLnRyYW5zcGFyZW50LWJvZHkge1xuICAgIGJhY2tncm91bmQ6IG5vbmUgdHJhbnNwYXJlbnQgIWltcG9ydGFudDtcbiAgICBvcGFjaXR5OiAwICFpbXBvcnRhbnQ7XG59XG5cbiNzY2FuLWNvbnRhaW5lciB7XG4gICAgaGVpZ2h0OiBjYWxjKDEwMCUgLSA1cHgpO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246Y29sdW1uO1xufVxuXG4jc2Nhbi1jb250YWluZXIgPiAjc2Nhbi1oZWFkZXIge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleDogMCAwIDIwMHB4O1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG4jc2Nhbi1oZWFkZXIgPiAjc2Nhbi1kZXRhaWxzIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXg6IDAgMCAxMDBweDtcbiAgICBmbGV4LWRpcmVjdGlvbjpjb2x1bW47XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgXG59XG5cbiNzY2FuLWRldGFpbHMgPiAjc2Nhbi1lYXJuZWQge1xuICAgIGZvbnQtc2l6ZTogNTZweDtcbiAgICBmb250LXdlaWdodDogYm9sZGVyO1xuICAgIGNvbG9yOiNFQjRFMjk7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICBhbGlnbi1jb250ZW50OiBjZW50ZXI7XG59XG5cbiNzY2FuLWRldGFpbHMgPiAjc2Nhbi1zdWJ0aXRsZSB7XG4gICAgZm9udC1zaXplOiAxMnB4O1xuICAgIGZvbnQtd2VpZ2h0OiBsaWdodDtcbiAgICBjb2xvcjogIzcxNzM3RDtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIGFsaWduLWNvbnRlbnQ6IGNlbnRlcjtcblxufSJdfQ== */"
 
 /***/ }),
 
@@ -2826,15 +2826,16 @@ let ScanComponent = class ScanComponent {
         this.barcodeCtrl = barcodeCtrl;
         this.toastController = toastController;
         this.platform = platform;
+        this.points = 0.0;
     }
     ionViewDidEnter() {
         this.initializeScanner();
     }
     initializeScanner() {
         const options = {
-            preferFrontCamera: true,
-            showFlipCameraButton: true,
-            showTorchButton: true,
+            preferFrontCamera: false,
+            showFlipCameraButton: false,
+            showTorchButton: false,
             torchOn: false,
             prompt: 'Place a barcode inside the scan area',
             resultDisplayDuration: 1500,

@@ -72,5 +72,13 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app requires access to your location for navigation purposes</string>
+	<key>NSCameraUsageDescription</key>
+	<string>your usage message</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>your microphone usage message here</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>your photo library usage message here</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>your photo library usage message here</string>
 </dict>
 </plist>

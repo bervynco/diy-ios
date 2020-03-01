@@ -131,6 +131,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
+      "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
+      "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
+      "pluginId": "phonegap-plugin-barcodescanner",
+      "clobbers": [
+        "cordova.plugins.barcodeScanner"
+      ]
+    },
+    {
       "id": "uk.co.workingedge.phonegap.plugin.launchnavigator.Common",
       "file": "plugins/uk.co.workingedge.phonegap.plugin.launchnavigator/www/common.js",
       "pluginId": "uk.co.workingedge.phonegap.plugin.launchnavigator",
@@ -153,14 +161,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "merges": [
         "launchnavigator"
       ]
-    },
-    {
-      "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-      "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-      "pluginId": "phonegap-plugin-barcodescanner",
-      "clobbers": [
-        "cordova.plugins.barcodeScanner"
-      ]
     }
   ];
   module.exports.metadata = {
@@ -176,7 +176,8 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-statusbar": "2.4.2",
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-sqlite-storage": "3.4.0",
+    "phonegap-plugin-barcodescanner": "8.1.0",
     "uk.co.workingedge.phonegap.plugin.launchnavigator": "5.0.4",
-    "phonegap-plugin-barcodescanner": "8.1.0"
+    "cordova-plugin-ios-camera-permissions": "1.2.0"
   };
 });
